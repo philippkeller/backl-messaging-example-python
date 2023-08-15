@@ -22,7 +22,7 @@ Your Flask application is now available at `http://localhost:3000`.
 
 Serveo offers a great free way to expose your local server to the internet:
 
-`ssh -R {identifier}:80:localhost:5001 serveo.net`
+`ssh -R {identifier}:80:localhost:3000 serveo.net`
 
 Your server is now available at `http://{identifier}.serveo.net`.
 
