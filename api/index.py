@@ -5,8 +5,14 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return """<h4>Your backl.io messaging API is running! 🥳</h4>
-    <p>Use {yourdomain}/message in the backlink builder to start using it.</p>
+    <p>Use https://<span id="servername"></span>/message in the backlink builder to start using it.</p>
     <p>To adapt it, edit ✍️ <code>api/index.py</code></p>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  var servernameDiv = document.getElementById("servername");
+  servernameDiv.textContent = window.location.hostname;
+});
+    </script>
     """
 
 @app.route('/message')
