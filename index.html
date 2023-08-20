@@ -1,0 +1,38 @@
+<html>
+<style>
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h4 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+</style>    
+
+<body class="container">
+<h4>Your backl.io messaging API is running! 🥳</h4>
+<p>Use https://<span id="servername"></span>/message in the backlink builder to start using it.</p>
+<p>To adapt it, edit ✍️ <code>api/index.py</code></p>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  var servernameDiv = document.getElementById("servername");
+  servernameDiv.textContent = window.location.hostname;
+});
+</script>
+</body></html>

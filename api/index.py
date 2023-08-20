@@ -1,19 +1,6 @@
-from flask import Flask, request
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return """<h4>Your backl.io messaging API is running! 🥳</h4>
-    <p>Use https://<span id="servername"></span>/message in the backlink builder to start using it.</p>
-    <p>To adapt it, edit ✍️ <code>api/index.py</code></p>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  var servernameDiv = document.getElementById("servername");
-  servernameDiv.textContent = window.location.hostname;
-});
-    </script>
-    """
 
 @app.route('/message')
 def message():
@@ -43,3 +30,7 @@ Greets
 {my_first_name}
 """.format(name=name, extra_section=extra_section, **p)
     return dict(subject=subject, body=body)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
