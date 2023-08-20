@@ -23,12 +23,26 @@ p {
     margin-bottom: 10px;
 }
 
+.codify {
+     font-family: 'Courier New', Courier, monospace;
+     font-size:x-large;
+     font-weight: 800;
+}
+
 </style>    
 
 <body class="container">
 <h4>Your backl.io messaging API is running! 🥳</h4>
-<p>Use https://<span id="servername"></span>/message in the backlink builder to start using it.</p>
-<p>To adapt it, edit ✍️ <code>api/index.py</code></p>
+<p>Paste the following url into <code>Message API Url</code> in backl.io settings</p>
+<p class="codify">
+https://<span id="servername"></span>/message
+</p>
+<p style="margin-top: 5em">
+  But don't use this example to send out actual emails.🫢 </p>
+  <p>The messaging is super generic and just serves as example.
+</p>
+<p>Go ahead build your own messaging by editing:</p>
+<pre class="codify">api/index.py</code></pre>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
   var servernameDiv = document.getElementById("servername");
