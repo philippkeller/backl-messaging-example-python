@@ -4,9 +4,7 @@ app = Flask(__name__)
 
 @app.route('/message')
 def message():
-    from pprint import pprint
     p = request.get_json()
-    pprint(p)
     subject = 'Links on your site "{prospect_title}"'.format(**p)
     email = p["email_address"]
     if '.' in email.split('@')[0]:
@@ -20,7 +18,7 @@ def message():
         extra_section = ''
     body = """Hi {name},
 
-My name is {my_first_name} and I'm the founder of {my_domain}: {my_claim}.
+My name iiis {my_first_name} and I'm the founder of {my_domain}: {my_claim}.
 
 I found your site "{prospect_title}" and noticed that you link to similar tools.
 
