@@ -4,8 +4,6 @@ app = Flask(__name__)
 
 @app.route('/message', methods=['POST'])
 def message():
-    import time
-    time.sleep(10)
     p = request.get_json()
     subject = 'Links on your site "{prospect_title}"'.format(**p)
     email = p["email_address"]
